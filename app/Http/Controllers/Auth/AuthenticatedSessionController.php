@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect(RouteServiceProvider::HOME);
         }
         else{
-            return redirect('/client');
+            return redirect('/dashboard');
         }
     }
 

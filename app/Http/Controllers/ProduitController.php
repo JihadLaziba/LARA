@@ -85,4 +85,18 @@ class ProduitController extends Controller
             session()->flash('success', 'Product removed successfully');
         }
     }
+    public function filter(Request $request)
+    {
+        $name = $request->get('name');
+        $minPrice = $request->input('min_price', 0);
+        $maxPrice = $request->input('max_price', 500);
+        $produits = Produit::when($name, function ($query, $name) {
+            return $query->where('name', 'like', '%'.$name.'%');
+        })->whereBetween('price', [$minPrice, $maxPrice])
+        ->get();
+    
+        return view('produits', compact('produits'));
+ 
+       
+    }
 }

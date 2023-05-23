@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;  
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +49,7 @@ Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('prod
 });
 
 require __DIR__.'/auth.php';
-Route::middleware('guest')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/produits', [ProduitController::class, 'index'])->name('produits');
     Route::get('cart', [ProduitController::class, 'cart'])->name('cart');
     Route::patch('update-cart', [ProduitController::class, 'update'])->name('update.cart');
@@ -54,4 +57,14 @@ Route::middleware('guest')->group(function () {
     Route::get('add-to-cart/{id}', [ProduitController::class, 'addToCart'])->name('add.to.cart');
     Route::patch('update-cart', [ProduitController::class, 'update'])->name('update.cart');
     Route::delete('remove-from-cart', [ProduitController::class, 'remove'])->name('remove.from.cart');
+    Route::get('send-mail', [MailController::class, 'index'])->name('sendmail');
+    Route::get('/products/filtrer-par-nom', [ProduitController::class, 'filter'])->name('produits.filtrerParNom');
+
+
+Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+Route::get('/categories/create', [CategoriesController::class, 'create'])->name('categories.create');
+Route::post('/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
+Route::get('/categories/{category}/edit', [CategoriesController::class, 'edit'])->name('categories.edit');
+Route::put('/categories/{category}', [CategoriesController::class, 'update'])->name('categories.update');
+Route::delete('/categories/{category}', [CategoriesController::class, 'delete'])->name('categories.delete');
 });

@@ -18,38 +18,44 @@ class ProduitSeeder extends Seeder
             [
                 'name' => 'Adidas',
                 'description' => 'Adidas Predator',
-                'image' => 'https://dummyimage.com/200x300/000/fff&text=Samsung',
-                'price' => 100
+                'image' => '1684186351.png',
+                'price' => 100,
+                'category_id'=> 1
             ],
             [
                 'name' => 'Adidas',
                 'description' => 'Adidas Nemeziz X',
-                'image' => 'https://dummyimage.com/200x300/000/fff&text=Iphone',
-                'price' => 500
+                'image' => '1684230028.jpg',
+                'price' => 500,
+                'category_id'=> 1
             ],
             [
                 'name' => 'Nike',
                 'description' => 'Nike Alpha',
-                'image' => 'https://dummyimage.com/200x300/000/fff&text=Google',
-                'price' => 400
+                'image' => '1684186237.jpg',
+                'price' => 400,
+                'category_id'=> 1
             ],
             [
                 'name' => 'Nike',
                 'description' => ' Nike Phantom',
-                'image' => 'https://dummyimage.com/200x300/000/fff&text=LG',
-                'price' => 200
+                'image' => '1a7ea0f5d21fbe5fbbe3cc975bddae9a.jpg',
+                'price' => 200,
+                'category_id'=> 1
             ],
             [
                 'name' => 'Puma',
                 'description' => 'Puma Future',
-                'image' => 'https://dummyimage.com/200x300/000/fff&text=LG',
-                'price' => 200
+                'image' => '1684195734.jpg',
+                'price' => 200,
+                'category_id'=> 1
             ],
             [
                 'name' => 'Puma',
                 'description' => 'Puma Ultra',
-                'image' => '1684185351.jpg',
-                'price' => 200
+                'image' => '1684186256.jpg',
+                'price' => 200,
+                'category_id'=> 1
             ]
         ];
   
